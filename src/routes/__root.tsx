@@ -38,40 +38,41 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+  // Log server-side only — never render raw error details in the DOM.
+  // Exposing stack traces to users is a security risk and was the source of
+  // the "h3 swallowed SSR error" message being visible on the deployed site.
+  if (typeof window === "undefined") {
+    console.error("[SSR] Root error boundary caught:", error);
+  }
   const router = useRouter();
   useEffect(() => {
+    console.error(error);
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center gradient-royal px-4 text-white">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <div className="text-5xl mb-6">⚡</div>
+        <h1 className="text-xl font-semibold tracking-tight">
           This page didn't load
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-white/70">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
-        {error && (
-          <div className="mt-4 text-left bg-muted border border-border rounded-lg p-4 overflow-x-auto text-xs font-mono max-h-60 max-w-full">
-            <div className="font-bold text-destructive mb-1">{error.message || String(error)}</div>
-            {error.stack && <pre className="whitespace-pre">{error.stack}</pre>}
-          </div>
-        )}
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full gradient-ember px-6 py-2.5 text-sm font-semibold text-[color:var(--ember-foreground)] transition hover:opacity-90"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
           >
             Go home
           </a>
@@ -104,12 +105,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/fusion-logo.png", type: "image/png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap",
-      },
+      // NOTE: Google Fonts stylesheet is intentionally NOT included here.
+      // External <link rel="stylesheet"> in head() triggers an SSR-side HTTP fetch
+      // in TanStack Start / Nitro, causing an HTTPError crash on Vercel.
+      // The font is loaded in RootShell via a plain <link> tag instead.
     ],
   }),
   shellComponent: RootShell,
@@ -123,6 +122,15 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Google Fonts loaded here as static HTML — NOT via head() links array.
+            External link tags in head() can trigger SSR HTTP fetches in TanStack Start
+            which crash with HTTPError on Vercel's serverless runtime. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        />
       </head>
       <body>
         {children}
