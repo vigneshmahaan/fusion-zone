@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Section, SectionHeader } from "@/components/site/Section";
 import { Features } from "@/components/site/Features";
-import { motion } from "framer-motion";
 import { Clock, Users, ShoppingBag, Star, Award } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -30,23 +29,13 @@ function AboutPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* New premium boutique image */}
           <div className="relative">
-            <motion.img
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+            <img
               src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
               alt="Fusion boutique interior"
               className="rounded-[2rem] shadow-luxe object-cover w-full aspect-[4/5]"
             />
             {/* Floating brand badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="absolute -bottom-5 -right-5 glass rounded-2xl px-5 py-4 shadow-luxe border border-border/40"
-            >
+            <div className="absolute -bottom-5 -right-5 glass rounded-2xl px-5 py-4 shadow-luxe border border-border/40">
               <div className="flex items-center gap-3">
                 <div className="grid h-11 w-11 place-items-center rounded-full gradient-royal text-white">
                   <Award className="h-5 w-5" />
@@ -56,7 +45,7 @@ function AboutPage() {
                   <div className="text-xs text-muted-foreground">of premium craft</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           <div>
@@ -77,13 +66,9 @@ function AboutPage() {
               ].map((s) => {
                 const Icon = s.icon;
                 return (
-                  <motion.div
+                  <div
                     key={s.l}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.03, y: -2 }}
-                    className="glass rounded-2xl p-5 flex items-start gap-4 border border-border/50 hover:border-[color:var(--teal)]/40 hover:shadow-lg transition-all duration-300"
+                    className="glass rounded-2xl p-5 flex items-start gap-4 border border-border/50 hover:border-[color:var(--teal)]/40 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <div className={`p-2.5 rounded-xl ${s.bg} ${s.color} shrink-0`}>
                       <Icon className="h-5 w-5" />
@@ -92,7 +77,7 @@ function AboutPage() {
                       <div className="font-display text-3xl font-black text-primary">{s.n}</div>
                       <div className="text-xs text-muted-foreground mt-0.5 font-medium">{s.l}</div>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>

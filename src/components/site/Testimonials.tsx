@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const reviews = [
   {
@@ -32,30 +31,21 @@ export function Testimonials() {
   return (
     <div className="relative mt-12">
       <div className="relative mx-auto max-w-3xl">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="glass rounded-[2rem] p-8 sm:p-10 text-center shadow-luxe"
-          >
-            <div className="flex justify-center gap-1 text-[color:var(--ember)]">
-              {Array.from({ length: 5 }).map((_, s) => (
-                <Star key={s} className="h-5 w-5 fill-current" />
-              ))}
+        <div className="glass rounded-[2rem] p-8 sm:p-10 text-center shadow-luxe transition-all duration-500">
+          <div className="flex justify-center gap-1 text-[color:var(--ember)]">
+            {Array.from({ length: 5 }).map((_, s) => (
+              <Star key={s} className="h-5 w-5 fill-current" />
+            ))}
+          </div>
+          <p className="mt-5 text-lg sm:text-xl font-medium">"{reviews[i].text}"</p>
+          <div className="mt-6 inline-flex items-center gap-3">
+            <img src={reviews[i].avatar} alt={reviews[i].name} className="h-12 w-12 rounded-full object-cover" />
+            <div className="text-left">
+              <div className="font-semibold text-[color:var(--royal)]">{reviews[i].name}</div>
+              <div className="text-xs text-muted-foreground">{reviews[i].role}</div>
             </div>
-            <p className="mt-5 text-lg sm:text-xl font-medium">"{reviews[i].text}"</p>
-            <div className="mt-6 inline-flex items-center gap-3">
-              <img src={reviews[i].avatar} alt={reviews[i].name} className="h-12 w-12 rounded-full object-cover" />
-              <div className="text-left">
-                <div className="font-semibold text-[color:var(--royal)]">{reviews[i].name}</div>
-                <div className="text-xs text-muted-foreground">{reviews[i].role}</div>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </div>
         <div className="mt-6 flex justify-center gap-2">
           {reviews.map((_, k) => (
             <button

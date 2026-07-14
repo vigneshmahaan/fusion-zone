@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Heart, ShoppingBag, Star, Eye } from "lucide-react";
 import type { Product } from "@/data/products";
 import { useStore } from "@/lib/store";
@@ -9,13 +8,8 @@ export function ProductCard({ product }: { product: Product }) {
   const liked = inWishlist(product.id);
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ y: -6 }}
-      className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-sm hover:shadow-[0_30px_60px_-30px_rgba(61,27,106,0.35)] transition"
+    <article
+      className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-sm hover:shadow-[0_30px_60px_-30px_rgba(61,27,106,0.35)] hover:-translate-y-1.5 transition-all duration-300"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-[color:var(--secondary)]">
         <img
@@ -75,6 +69,6 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }

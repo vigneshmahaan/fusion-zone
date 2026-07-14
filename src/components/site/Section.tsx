@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 export function SectionHeader({
@@ -13,11 +12,7 @@ export function SectionHeader({
   center?: boolean;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6 }}
+    <div
       className={center ? "text-center max-w-2xl mx-auto" : "max-w-2xl"}
     >
       {eyebrow && (
@@ -37,9 +32,10 @@ export function SectionHeader({
         <div className="h-1 w-3 rounded-full bg-[color:var(--royal)]/40" />
       </div>
       {subtitle && <p className="mt-4 text-muted-foreground leading-relaxed">{subtitle}</p>}
-    </motion.div>
+    </div>
   );
 }
+
 
 export function Section({
   children,

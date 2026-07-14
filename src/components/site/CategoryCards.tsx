@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const cats = [
@@ -26,14 +25,8 @@ const cats = [
 export function CategoryCards() {
   return (
     <div className="mt-12 grid gap-6 md:grid-cols-3">
-      {cats.map((c, i) => (
-        <motion.div
-          key={c.to}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: i * 0.1 }}
-        >
+      {cats.map((c) => (
+        <div key={c.to}>
           <Link
             to={c.to}
             className="group relative block overflow-hidden rounded-[2rem] shadow-luxe aspect-[4/5]"
@@ -53,7 +46,7 @@ export function CategoryCards() {
               </span>
             </div>
           </Link>
-        </motion.div>
+        </div>
       ))}
     </div>
   );
