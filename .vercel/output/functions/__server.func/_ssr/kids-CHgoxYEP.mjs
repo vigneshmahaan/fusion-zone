@@ -1,9 +1,9 @@
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 import { t as PageHeader } from "./PageHeader-BVshOLmR.mjs";
 import { t as Section } from "./Section-BoK5YPOU.mjs";
-import { r as byCategory } from "./products-TRiW77hf.mjs";
-import { t as CatalogControls } from "./CatalogControls-o2-IHMP3.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/kids-BWjBBKNk.js
+import { r as byCategory } from "./products-NYJh0Ncc.mjs";
+import { t as CatalogControls } from "./CatalogControls-BTY0AnMi.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/kids-CHgoxYEP.js
 var import_jsx_runtime = require_jsx_runtime();
 function KidsPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageHeader, {

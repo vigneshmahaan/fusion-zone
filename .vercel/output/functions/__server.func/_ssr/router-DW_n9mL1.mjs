@@ -8,12 +8,12 @@ import { n as cn, t as Button } from "./button-B2LyfGb_.mjs";
 import { t as Input } from "./input-2g06Pm9g.mjs";
 import { n as toast, t as Toaster } from "../_libs/sonner.mjs";
 import { n as objectType, r as stringType } from "../_libs/zod.mjs";
-import { o as products, s as useStore, t as StoreProvider } from "./products-TRiW77hf.mjs";
+import { o as products, s as useStore, t as StoreProvider } from "./products-NYJh0Ncc.mjs";
 import { a as DialogOverlay, c as DialogTrigger, i as DialogDescription, n as DialogClose, o as DialogPortal, r as DialogContent, s as DialogTitle, t as Dialog } from "../_libs/@radix-ui/react-dialog+[...].mjs";
-import { t as Route$10 } from "./product._id-CsRlzsSr.mjs";
+import { t as Route$10 } from "./product._id-BY2kGudJ.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DwepCmC9.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DW_n9mL1.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-NHch0_3L.css";
@@ -992,7 +992,7 @@ var Route$8 = createFileRoute("/sitemap.xml")({ server: { handlers: { GET: async
 		"Cache-Control": "public, max-age=3600"
 	} });
 } } } });
-var $$splitComponentImporter$7 = () => import("./shoes-Gcw_Pz4A.mjs");
+var $$splitComponentImporter$7 = () => import("./shoes-DNEA9LKK.mjs");
 var Route$7 = createFileRoute("/shoes")({
 	component: lazyRouteComponent($$splitComponentImporter$7, "component"),
 	head: () => ({ meta: [
@@ -1011,7 +1011,7 @@ var Route$7 = createFileRoute("/shoes")({
 		}
 	] })
 });
-var $$splitComponentImporter$6 = () => import("./offers-1q72j6SG.mjs");
+var $$splitComponentImporter$6 = () => import("./offers-BN7zqIS_.mjs");
 var Route$6 = createFileRoute("/offers")({
 	component: lazyRouteComponent($$splitComponentImporter$6, "component"),
 	head: () => ({ meta: [
@@ -1030,7 +1030,7 @@ var Route$6 = createFileRoute("/offers")({
 		}
 	] })
 });
-var $$splitComponentImporter$5 = () => import("./new-arrivals-CMYUh5GY.mjs");
+var $$splitComponentImporter$5 = () => import("./new-arrivals-CIX_YvGS.mjs");
 var Route$5 = createFileRoute("/new-arrivals")({
 	component: lazyRouteComponent($$splitComponentImporter$5, "component"),
 	head: () => ({ meta: [
@@ -1049,7 +1049,7 @@ var Route$5 = createFileRoute("/new-arrivals")({
 		}
 	] })
 });
-var $$splitComponentImporter$4 = () => import("./men-accessories-sXTkcGn4.mjs");
+var $$splitComponentImporter$4 = () => import("./men-accessories-si1TTu0i.mjs");
 var accessoriesSearchSchema = objectType({ subcategory: stringType().optional().catch("All") });
 var Route$4 = createFileRoute("/men-accessories")({
 	validateSearch: (search) => accessoriesSearchSchema.parse(search),
@@ -1070,7 +1070,7 @@ var Route$4 = createFileRoute("/men-accessories")({
 		}
 	] })
 });
-var $$splitComponentImporter$3 = () => import("./kids-BWjBBKNk.mjs");
+var $$splitComponentImporter$3 = () => import("./kids-CHgoxYEP.mjs");
 var Route$3 = createFileRoute("/kids")({
 	component: lazyRouteComponent($$splitComponentImporter$3, "component"),
 	head: () => ({ meta: [
@@ -1127,7 +1127,7 @@ var Route$1 = createFileRoute("/about")({
 		}
 	] })
 });
-var $$splitComponentImporter = () => import("./routes-GAqXmoqs.mjs");
+var $$splitComponentImporter = () => import("./routes-BeoZzHbN.mjs");
 var Route = createFileRoute("/")({
 	component: lazyRouteComponent($$splitComponentImporter, "component"),
 	head: () => ({ meta: [{ title: "Fusion Shoe Zone & Accessories · Walk it. Wear it. Love it." }, {

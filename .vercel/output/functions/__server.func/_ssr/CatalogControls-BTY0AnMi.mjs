@@ -3,9 +3,9 @@ import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 import { M as Check, j as ChevronDown, k as ChevronUp } from "../_libs/lucide-react.mjs";
 import { n as cn, t as Button } from "./button-B2LyfGb_.mjs";
-import { t as ProductGrid } from "./ProductGrid-BuVQtTY2.mjs";
+import { t as ProductGrid } from "./ProductGrid-BZdT1lSc.mjs";
 import { a as SelectItemIndicator, c as SelectPortal, d as SelectSeparator$1, f as SelectTrigger$1, i as SelectItem$1, l as SelectScrollDownButton$1, m as SelectViewport, n as SelectContent$1, o as SelectItemText, p as SelectValue$1, r as SelectIcon, s as SelectLabel$1, t as Select$1, u as SelectScrollUpButton$1 } from "../_libs/@radix-ui/react-select+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/CatalogControls-o2-IHMP3.js
+//#region node_modules/.nitro/vite/services/ssr/assets/CatalogControls-BTY0AnMi.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Select = Select$1;

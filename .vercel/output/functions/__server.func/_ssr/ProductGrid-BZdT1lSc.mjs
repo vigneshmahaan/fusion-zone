@@ -2,8 +2,8 @@ import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 import { D as Eye, d as ShoppingBag, l as Star, w as Heart } from "../_libs/lucide-react.mjs";
 import { t as motion } from "../_libs/framer-motion.mjs";
-import { s as useStore } from "./products-TRiW77hf.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/ProductGrid-BuVQtTY2.js
+import { s as useStore } from "./products-NYJh0Ncc.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/ProductGrid-BZdT1lSc.js
 var import_jsx_runtime = require_jsx_runtime();
 function ProductCard({ product }) {
 	const { addToCart, toggleWishlist, inWishlist } = useStore();

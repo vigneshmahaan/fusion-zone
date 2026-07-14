@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/products-TRiW77hf.js
+//#region node_modules/.nitro/vite/services/ssr/assets/products-NYJh0Ncc.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Ctx = (0, import_react.createContext)(null);
@@ -16,19 +16,29 @@ function safeGet(key, fallback) {
 	}
 }
 function StoreProvider({ children }) {
-	const [cart, setCart] = (0, import_react.useState)(() => safeGet("fsz.cart", []));
-	const [wishlist, setWishlist] = (0, import_react.useState)(() => safeGet("fsz.wishlist", []));
-	const [dark, setDark] = (0, import_react.useState)(() => safeGet("fsz.dark", false));
+	const [cart, setCart] = (0, import_react.useState)([]);
+	const [wishlist, setWishlist] = (0, import_react.useState)([]);
+	const [dark, setDark] = (0, import_react.useState)(false);
+	const [isInitialized, setIsInitialized] = (0, import_react.useState)(false);
 	(0, import_react.useEffect)(() => {
+		setCart(safeGet("fsz.cart", []));
+		setWishlist(safeGet("fsz.wishlist", []));
+		setDark(safeGet("fsz.dark", false));
+		setIsInitialized(true);
+	}, []);
+	(0, import_react.useEffect)(() => {
+		if (!isInitialized) return;
 		localStorage.setItem("fsz.cart", JSON.stringify(cart));
-	}, [cart]);
+	}, [cart, isInitialized]);
 	(0, import_react.useEffect)(() => {
+		if (!isInitialized) return;
 		localStorage.setItem("fsz.wishlist", JSON.stringify(wishlist));
-	}, [wishlist]);
+	}, [wishlist, isInitialized]);
 	(0, import_react.useEffect)(() => {
+		if (!isInitialized) return;
 		localStorage.setItem("fsz.dark", JSON.stringify(dark));
 		document.documentElement.classList.toggle("dark", dark);
-	}, [dark]);
+	}, [dark, isInitialized]);
 	const value = (0, import_react.useMemo)(() => {
 		return {
 			cart,

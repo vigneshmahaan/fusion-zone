@@ -6,10 +6,10 @@ import { _ as Package, c as ThumbsUp, d as ShoppingBag, l as Star, m as RotateCc
 import { t as PageHeader } from "./PageHeader-BVshOLmR.mjs";
 import { n as SectionHeader, t as Section } from "./Section-BoK5YPOU.mjs";
 import { t as Button } from "./button-B2LyfGb_.mjs";
-import { i as findProduct, r as byCategory, s as useStore } from "./products-TRiW77hf.mjs";
-import { t as ProductGrid } from "./ProductGrid-BuVQtTY2.mjs";
-import { t as Route } from "./product._id-CsRlzsSr.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/product._id-BV1V6lFS.js
+import { i as findProduct, r as byCategory, s as useStore } from "./products-NYJh0Ncc.mjs";
+import { t as ProductGrid } from "./ProductGrid-BZdT1lSc.mjs";
+import { t as Route } from "./product._id-BY2kGudJ.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/product._id-Cj8ogV1S.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ProductPage() {

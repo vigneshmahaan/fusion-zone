@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DS3FN3QK.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BWEGUaS8.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/__root.tsx",
@@ -14,19 +14,19 @@ var tsrStartManifest = () => ({ routes: {
 			"/sitemap.xml",
 			"/product/$id"
 		],
-		preloads: ["/assets/index-BlEKkf3m.js", "/assets/createLucideIcon-C1hcfioS.js"],
+		preloads: ["/assets/index-CRyDgKbQ.js", "/assets/createLucideIcon-C1hcfioS.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-BlEKkf3m.js"
+			src: "/assets/index-CRyDgKbQ.js"
 		} }]
 	},
 	"/": {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-tv0FXZAb.js",
-			"/assets/ProductGrid-BMTMzaNt.js",
+			"/assets/routes-DxglbTI3.js",
+			"/assets/ProductGrid-DmXLGK0_.js",
 			"/assets/Features-BYVNfxLP.js",
 			"/assets/star-dPYXmi7C.js",
 			"/assets/Section-DCFnPawa.js"
@@ -36,7 +36,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/about.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/about-Dp150Mqe.js",
+			"/assets/about-DoojrEkd.js",
 			"/assets/PageHeader-BPWtB2yL.js",
 			"/assets/clock-Cvhf388a.js",
 			"/assets/Features-BYVNfxLP.js",
@@ -48,7 +48,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/contact.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/contact-C8F07fSE.js",
+			"/assets/contact-BCc8FA_X.js",
 			"/assets/PageHeader-BPWtB2yL.js",
 			"/assets/clock-Cvhf388a.js",
 			"/assets/Section-DCFnPawa.js"
@@ -58,8 +58,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/kids.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/kids-CDIm4VQ4.js",
-			"/assets/CatalogControls-BOokPXs-.js",
+			"/assets/kids-CldH7uLY.js",
+			"/assets/CatalogControls-E8xFICSr.js",
 			"/assets/PageHeader-BPWtB2yL.js",
 			"/assets/Section-DCFnPawa.js"
 		]
@@ -68,8 +68,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/men-accessories.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/men-accessories-3PtVcqfI.js",
-			"/assets/CatalogControls-BOokPXs-.js",
+			"/assets/men-accessories-hO4v8Z0U.js",
+			"/assets/CatalogControls-E8xFICSr.js",
 			"/assets/PageHeader-BPWtB2yL.js",
 			"/assets/Section-DCFnPawa.js"
 		]
@@ -78,9 +78,9 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/new-arrivals.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/new-arrivals-CtPl-iwM.js",
+			"/assets/new-arrivals-Gdv1CXG4.js",
 			"/assets/PageHeader-BPWtB2yL.js",
-			"/assets/ProductGrid-BMTMzaNt.js",
+			"/assets/ProductGrid-DmXLGK0_.js",
 			"/assets/Section-DCFnPawa.js"
 		]
 	},
@@ -88,9 +88,9 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/offers.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/offers-2tQoESpD.js",
+			"/assets/offers-BrOC1icJ.js",
 			"/assets/PageHeader-BPWtB2yL.js",
-			"/assets/ProductGrid-BMTMzaNt.js",
+			"/assets/ProductGrid-DmXLGK0_.js",
 			"/assets/Section-DCFnPawa.js"
 		]
 	},
@@ -98,8 +98,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/shoes.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/shoes-D1fhiLb9.js",
-			"/assets/CatalogControls-BOokPXs-.js",
+			"/assets/shoes-Cb--nCvh.js",
+			"/assets/CatalogControls-E8xFICSr.js",
 			"/assets/PageHeader-BPWtB2yL.js",
 			"/assets/Section-DCFnPawa.js"
 		]
@@ -108,9 +108,9 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/FUSION_STYLE/FRONTEND/fusion-style-hub-main/src/routes/product.$id.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/product._id-FPfpmXHk.js",
+			"/assets/product._id-laU4M-ZY.js",
 			"/assets/PageHeader-BPWtB2yL.js",
-			"/assets/ProductGrid-BMTMzaNt.js",
+			"/assets/ProductGrid-DmXLGK0_.js",
 			"/assets/truck-CzANGHen.js",
 			"/assets/star-dPYXmi7C.js",
 			"/assets/Section-DCFnPawa.js"

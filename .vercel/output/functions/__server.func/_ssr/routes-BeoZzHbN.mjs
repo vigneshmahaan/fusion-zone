@@ -6,9 +6,9 @@ import { C as Instagram, F as ArrowUpRight, I as ArrowRight, l as Star, r as Use
 import { n as AnimatePresence, t as motion } from "../_libs/framer-motion.mjs";
 import { n as SectionHeader, t as Section } from "./Section-BoK5YPOU.mjs";
 import { t as Features } from "./Features-DZL0HvYG.mjs";
-import { a as newArrivals, n as bestSellers, r as byCategory } from "./products-TRiW77hf.mjs";
-import { t as ProductGrid } from "./ProductGrid-BuVQtTY2.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-GAqXmoqs.js
+import { a as newArrivals, n as bestSellers, r as byCategory } from "./products-NYJh0Ncc.mjs";
+import { t as ProductGrid } from "./ProductGrid-BZdT1lSc.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BeoZzHbN.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function Hero() {

@@ -39,22 +39,31 @@ function safeGet<T>(key: string, fallback: T): T {
 }
 
 export function StoreProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>(() => safeGet("fsz.cart", []));
-  const [wishlist, setWishlist] = useState<Product[]>(() =>
-    safeGet("fsz.wishlist", []),
-  );
-  const [dark, setDark] = useState<boolean>(() => safeGet("fsz.dark", false));
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [wishlist, setWishlist] = useState<Product[]>([]);
+  const [dark, setDark] = useState<boolean>(false);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
+    setCart(safeGet("fsz.cart", []));
+    setWishlist(safeGet("fsz.wishlist", []));
+    setDark(safeGet("fsz.dark", false));
+    setIsInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isInitialized) return;
     localStorage.setItem("fsz.cart", JSON.stringify(cart));
-  }, [cart]);
+  }, [cart, isInitialized]);
   useEffect(() => {
+    if (!isInitialized) return;
     localStorage.setItem("fsz.wishlist", JSON.stringify(wishlist));
-  }, [wishlist]);
+  }, [wishlist, isInitialized]);
   useEffect(() => {
+    if (!isInitialized) return;
     localStorage.setItem("fsz.dark", JSON.stringify(dark));
     document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
+  }, [dark, isInitialized]);
 
   const value = useMemo<StoreCtx>(() => {
     return {
