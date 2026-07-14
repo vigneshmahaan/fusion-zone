@@ -20,6 +20,10 @@ if (typeof process !== "undefined" && typeof process.on === "function") {
   process.on("unhandledRejection", (reason) => record(reason));
 }
 
+export function recordError(error: unknown) {
+  record(error);
+}
+
 export function consumeLastCapturedError(): unknown {
   if (!lastCapturedError) return undefined;
   if (Date.now() - lastCapturedError.at > TTL_MS) {
@@ -30,3 +34,4 @@ export function consumeLastCapturedError(): unknown {
   lastCapturedError = undefined;
   return error;
 }
+

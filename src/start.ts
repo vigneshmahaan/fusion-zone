@@ -1,6 +1,7 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
+import { recordError } from "./lib/error-capture";
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
@@ -8,6 +9,7 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
   } catch (error) {
     // Always log the raw error server-side so it appears in Vercel function logs.
     console.error("[middleware] Unhandled error during SSR:", error);
+    recordError(error);
 
     // Re-throw h3/TanStack HTTP errors (have statusCode) so the router can
     // handle 404s, redirects, etc. correctly.

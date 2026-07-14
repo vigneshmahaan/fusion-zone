@@ -13,10 +13,10 @@ import { a as DialogOverlay, c as DialogTrigger, i as DialogDescription, n as Di
 import { t as Route$10 } from "./product._id-DkSPBoMU.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BAaE8jgn.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DawKfQzb.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-oXnwxsFX.css";
+var styles_default = "/assets/styles-CaHZEfC3.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -810,46 +810,41 @@ function NotFoundComponent() {
 	});
 }
 function ErrorComponent({ error, reset }) {
-	console.error(error);
+	if (typeof window === "undefined") console.error("[SSR] Root error boundary caught:", error);
 	const router = useRouter();
 	(0, import_react.useEffect)(() => {
+		console.error(error);
 		reportLovableError(error, { boundary: "tanstack_root_error_component" });
 	}, [error]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "flex min-h-screen items-center justify-center bg-background px-4",
+		className: "flex min-h-screen items-center justify-center gradient-royal px-4 text-white",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "max-w-md text-center",
 			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "text-5xl mb-6",
+					children: "⚡"
+				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-					className: "text-xl font-semibold tracking-tight text-foreground",
+					className: "text-xl font-semibold tracking-tight",
 					children: "This page didn't load"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "mt-2 text-sm text-muted-foreground",
+					className: "mt-2 text-sm text-white/70",
 					children: "Something went wrong on our end. You can try refreshing or head back home."
 				}),
-				error && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-4 text-left bg-muted border border-border rounded-lg p-4 overflow-x-auto text-xs font-mono max-h-60 max-w-full",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "font-bold text-destructive mb-1",
-						children: error.message || String(error)
-					}), error.stack && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("pre", {
-						className: "whitespace-pre",
-						children: error.stack
-					})]
-				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-6 flex flex-wrap justify-center gap-2",
+					className: "mt-6 flex flex-wrap justify-center gap-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						onClick: () => {
 							router.invalidate();
 							reset();
 						},
-						className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90",
+						className: "inline-flex items-center justify-center rounded-full gradient-ember px-6 py-2.5 text-sm font-semibold text-[color:var(--ember-foreground)] transition hover:opacity-90",
 						children: "Try again"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 						href: "/",
-						className: "inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent",
+						className: "inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10",
 						children: "Go home"
 					})]
 				})
@@ -891,30 +886,14 @@ var Route$9 = createRootRouteWithContext()({
 				content: "summary_large_image"
 			}
 		],
-		links: [
-			{
-				rel: "stylesheet",
-				href: styles_default
-			},
-			{
-				rel: "icon",
-				href: "/fusion-logo.png",
-				type: "image/png"
-			},
-			{
-				rel: "preconnect",
-				href: "https://fonts.googleapis.com"
-			},
-			{
-				rel: "preconnect",
-				href: "https://fonts.gstatic.com",
-				crossOrigin: "anonymous"
-			},
-			{
-				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-			}
-		]
+		links: [{
+			rel: "stylesheet",
+			href: styles_default
+		}, {
+			rel: "icon",
+			href: "/fusion-logo.png",
+			type: "image/png"
+		}]
 	}),
 	shellComponent: RootShell,
 	component: RootComponent,
@@ -924,7 +903,22 @@ var Route$9 = createRootRouteWithContext()({
 function RootShell({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", { children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", {
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", {
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "anonymous"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("link", {
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+			})
+		] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
 	});
 }
 function RootComponent() {

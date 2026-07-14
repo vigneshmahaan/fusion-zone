@@ -53,6 +53,32 @@ var findRoute = /* @__PURE__ */ (() => {
 })();
 [].filter(Boolean);
 //#endregion
+//#region node_modules/nitro/dist/runtime/internal/error/utils.mjs
+function defineNitroErrorHandler(handler) {
+	return handler;
+}
+if (typeof globalThis.addEventListener === "function") {
+	globalThis.addEventListener("error", (event) => (event.error, void 0));
+	globalThis.addEventListener("unhandledrejection", (event) => (event.reason, void 0));
+}
+if (typeof process !== "undefined" && typeof process.on === "function") {
+	process.on("uncaughtException", (error) => void 0);
+	process.on("unhandledRejection", (reason) => void 0);
+}
+//#endregion
+//#region src/lib/nitro-error-handler.ts
+var nitro_error_handler_default = defineNitroErrorHandler((error, event) => {
+	console.error("[Nitro Error Handler] Caught unhandled server-side error:", error);
+	return new Response(JSON.stringify({
+		status: 500,
+		unhandled: true,
+		message: "HTTPError"
+	}), {
+		status: 500,
+		headers: { "content-type": "application/json" }
+	});
+});
+//#endregion
 //#region node_modules/nitro/dist/runtime/internal/error/prod.mjs
 var errorHandler = (error, event) => {
 	const res = defaultHandler(error, event);
@@ -90,7 +116,7 @@ function defaultHandler(error, event) {
 }
 //#endregion
 //#region #nitro/virtual/error-handler
-var errorHandlers = [errorHandler];
+var errorHandlers = [nitro_error_handler_default, errorHandler];
 async function error_handler_default(error, event) {
 	for (const handler of errorHandlers) try {
 		const response = await handler(error, event, { defaultHandler });

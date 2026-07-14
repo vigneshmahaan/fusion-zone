@@ -20,5 +20,6 @@ export default defineConfig({
     // "vercel" preset emits .vercel/output which Vercel natively understands.
     // Set NITRO_PRESET=node-server locally if you want to test the node server build.
     preset,
+    errorHandler: "./src/lib/nitro-error-handler.ts",
   },
 });
